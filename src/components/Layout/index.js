@@ -1,10 +1,13 @@
 import s from './style.module.css';
 
-const Layout = ({title, descr, urlBg = 'none', colorBg = 'transparent'}) => {
-    const styleRoot = {
-        backgroundImage: 'url(' + urlBg + ')',
-        backgroundColor: colorBg,
-    };
+const Layout = ({title, descr, urlBg, colorBg}) => {
+    const styleRoot = {};
+    if (urlBg) {
+        styleRoot.backgroundImage = `url(${urlBg})`;
+    }
+    if (colorBg) {
+        styleRoot.backgroundColor = colorBg;
+    }
 
     return (
         <section className={s.root} style={styleRoot}>
