@@ -1,6 +1,6 @@
 import s from './style.module.css';
 
-const Layout = ({title, descr, urlBg, colorBg}) => {
+const Layout = ({title, urlBg, colorBg, children}) => {
     const styleRoot = {};
     if (urlBg) {
         styleRoot.backgroundImage = `url(${urlBg})`;
@@ -17,8 +17,8 @@ const Layout = ({title, descr, urlBg, colorBg}) => {
                         {title && <h3>{title}</h3>}
                         <span className={s.separator}/>
                     </div>
-                    <div className={[s.desc, s.full]}>
-                        {descr && <p>{descr}</p>}
+                    <div className={`${s.desc} ${s.full}`}>
+                        {children}
                     </div>
                 </article>
             </div>
